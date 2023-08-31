@@ -19,4 +19,13 @@ public class ATM
         }
         hMap.remove(userID);
     }
+    public double depositMoney(String userID, double amount) throws Exception
+    {
+        if (!hMap.containsKey(userID))
+        {
+            throw new Exception ("Sorry, you're broke AF");
+        }
+        hMap.put(userID, hMap.get(userID)+amount);
+        return amount;
+    }
 }
