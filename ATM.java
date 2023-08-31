@@ -57,5 +57,14 @@ public class ATM
         }
         return false;
     }
-    
+    public void audit() throws IOException
+    {
+        FileWriter fileWriter = new FileWriter("AccountAudit.txt", false);
+        PrintWriter pw = new PrintWriter(fileWriter);
+        for (String key: hMap.keySet())
+        {
+            pw.write("UserID: " + key + "; Amount: " + hMap.get(key) + "\n");
+        }
+        pw.close();
+    }
 }
