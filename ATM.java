@@ -28,4 +28,20 @@ public class ATM
         hMap.put(userID, hMap.get(userID)+amount);
         return amount;
     }
+    public double withdrawMoney(String userID, double amount) throws Exception
+    {
+        if (!hMap.containsKey(userID))
+        {
+            throw new Exception ("Sorry, you're broke AF");
+        }
+        if (hMap.get(userID) <= amount)
+        {
+            hMap.put(userID, hMap.get(userID)-amount);
+        }
+        else
+        {
+            throw new Exception ("Sorry, you're broke AF");
+        }
+        return amount;
+    }
 }
