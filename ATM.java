@@ -1,3 +1,6 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 
 public class ATM
@@ -44,4 +47,15 @@ public class ATM
         }
         return amount;
     }
+    public boolean transferMoney (String fromAccount, String toAccount, double amount)
+    {
+        if (amount <= hMap.get(fromAccount))
+        {
+            hMap.put(fromAccount, hMap.get(fromAccount) - amount);
+            hMap.put(toAccount, hMap.get(toAccount) + amount);
+            return true;
+        }
+        return false;
+    }
+    
 }
