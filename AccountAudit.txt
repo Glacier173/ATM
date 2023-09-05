@@ -1,0 +1,2 @@
+UserID: user1; Amount: 950.0
+UserID: user2; Amount: 300.0

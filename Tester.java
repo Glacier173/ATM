@@ -14,7 +14,7 @@ public class Tester {
         System.out.println(b.checkBalance("user2")); //300
         BufferedReader br = new BufferedReader(new FileReader("AccountAudit.txt"));
         b.audit();
-        if (br.readLine().equals ("950") && br.readLine().equals("300"))
+        if (br.readLine().equals ("UserID: user1; Amount: 950.0") && br.readLine().equals("UserID: user2; Amount: 300.0"))
         {
             System.out.println("Audit works");
         }
